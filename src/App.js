@@ -14,7 +14,7 @@ import Newscomponent from './components/Newscomponent';
 //   return response.json(); // parses JSON response into native JavaScript objects
 // }
 
-// postData('https://newsapi.org/v2/everything?q=tesla&from=2022-02-13&sortBy=publishedAt&apiKey=7e8432d97254488dacf3cc951c564850').then((data)=>{
+// postData('https://newsapi.org/v2/everything?q=tesla&from=2022-02-15&sortBy=publishedAt&apiKey=7e8432d97254488dacf3cc951c564850').then((data)=>{
 //   console.log(data)
 // })
 
@@ -23,7 +23,8 @@ export default class App extends Component {
     return (
       <>
     <Navbar/>
-    <Newscomponent/>
+    <Newscomponent pageSize={5}/>
+
       </>
     )
   }
