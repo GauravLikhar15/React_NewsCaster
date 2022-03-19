@@ -3,6 +3,8 @@ import Newsitem from './Newsitem'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
+
+
 export default class newscomponent extends Component {
 
     articles = [
@@ -72,18 +74,24 @@ export default class newscomponent extends Component {
     }
     async updateNews(){
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&page=${this.state.page}&category=${this.props.category}&apiKey=${this.api}&pageSize=${this.props.pageSize}`;
-        this.setState({ loading: true })
+        
+
+        this.props.setProgress(10);
         
         const response = await fetch(url, {
             method: 'GET',
         });
+        this.props.setProgress(30)
+        
         
         console.log(response)
         let data = await response.json(); // parses JSON response into native JavaScript objects
+        this.props.setProgress(60);
         this.setState({ loading: false })
         this.setState({ articles: data.articles, totalResults: data.totalResults })
         console.log(data.articles)
-        this.setState({ loading: false })
+        
+        this.props.setProgress(100)
         
     }
     async componentDidMount() {
@@ -105,13 +113,7 @@ export default class newscomponent extends Component {
         this.setState(
             { articles: this.state.articles.concat(data.articles), 
             totalResults: data.totalResults })
-        
-        
-
-
-
-        
-      };
+    };
 
     // handleNextClick = async () => {
     //     if (this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)) {
@@ -146,15 +148,13 @@ export default class newscomponent extends Component {
                 {
                     // (this.state.loading) ? <Spinner /> : <></>
                 }
-                
-
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
                     hasMore={this.state.articles.length!== this.state.articles.totalResults}
                     loader={<Spinner/>}
                     >
-                {/* This is for Finite scroll (NEXT AND PREVIOUS BUTTON) */}
+                {/* ----------------------------------This is for Finite scroll (NEXT AND PREVIOUS BUTTON)--------------------------------- */}
                 {/* <div className="row">
                         {
                             (!this.state.loading) ? this.state.articles.map((element) => {
@@ -168,10 +168,10 @@ export default class newscomponent extends Component {
                                 : <></>
                         }
                     </div> */}
-                    {/* ----------------------------------------------------------------------------------------------- */}
-                    {/* INFINITE SCROLL */}
-                    <div className="container">
 
+
+                    {/* ---------------------------------------- INFINITE SCROLL ------------------------------------------------------- */}
+                    <div className="container">
                     <div className="row">
                         {
                             (!this.state.loading) ? this.state.articles.map((element) => {
@@ -186,11 +186,10 @@ export default class newscomponent extends Component {
                                 : <></>
                         }
                     </div>
-
                         </div>
                     </InfiniteScroll>
 
-                        {/* ----------------------------PREVIOUS AND NEXT BUTTONS------------------------- */}
+                    {/* ----------------------------PREVIOUS AND NEXT BUTTONS------------------------- */}
 
                     {/* <div className="container d-flex justify-content-between my-4">
                         <button type="button" disabled={this.state.page <= 1} className="btn btn-primary " onClick={this.handlePrevClick}>&larr; Previous</button>
