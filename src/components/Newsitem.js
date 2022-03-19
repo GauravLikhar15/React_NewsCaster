@@ -10,7 +10,7 @@ export default class newsitem extends Component {
       <div className="container my-3">
         <div className="card" style={{ width: "18rem" }}>
 
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" style={{ zIndex: 1, }}>{source} </span>
+          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" style={{ zIndex: 1, }}>{source} </span>
 
           <img src={imgURL} className="card-img-top" alt="..." />
           <div className="card-body">

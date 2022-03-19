@@ -144,7 +144,9 @@ export default class newscomponent extends Component {
     render() {
         return (
             <>
-                <h2 className='text-center my-5'>TODAY'S TOP HEADLINES</h2>
+                
+                <h2 className='text-center ' style={{"marginTop":"75px"}}>TODAY'S TOP HEADLINES</h2>
+                
                 {
                     // (this.state.loading) ? <Spinner /> : <></>
                 }
