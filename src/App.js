@@ -31,14 +31,14 @@ export default class App extends Component {
 
           <Navbar />
           <Switch>
-            <Route exact path="/"><Newscomponent key="general" pageSize={6} country={"us"} category={"general"} /></Route>
-            <Route exact path="/business"><Newscomponent key="business" pageSize={6} country={"us"} category={"business"} /></Route>
-            <Route exact path="/entertainment"><Newscomponent key="entertainment"  pageSize={6} country={"us"} category={"entertainment"} /></Route>
-            <Route exact path="/general"><Newscomponent  key="general" pageSize={6} country={"us"} category={"general"} /></Route>
-            <Route exact path="/health"><Newscomponent  key="health" pageSize={6} country={"us"} category={"health"} /></Route>
-            <Route exact path="/science"><Newscomponent key="science"  pageSize={6} country={"us"} category={"science"} /></Route>
-            <Route exact path="/sports"><Newscomponent key="sports"  pageSize={6} country={"us"} category={"sports"} /></Route>
-            <Route exact path="/technology"><Newscomponent key="technology"  pageSize={6} country={"us"} category={"technology"} /></Route>
+            <Route exact path="/"><Newscomponent key="general" pageSize={6} country={"in"} category={"general"} /></Route>
+            <Route exact path="/business"><Newscomponent key="business" pageSize={6} country={"in"} category={"business"} /></Route>
+            <Route exact path="/entertainment"><Newscomponent key="entertainment"  pageSize={6} country={"in"} category={"entertainment"} /></Route>
+            <Route exact path="/general"><Newscomponent  key="general" pageSize={6} country={"in"} category={"general"} /></Route>
+            <Route exact path="/health"><Newscomponent  key="health" pageSize={6} country={"in"} category={"health"} /></Route>
+            <Route exact path="/science"><Newscomponent key="science"  pageSize={6} country={"in"} category={"science"} /></Route>
+            <Route exact path="/sports"><Newscomponent key="sports"  pageSize={6} country={"in"} category={"sports"} /></Route>
+            <Route exact path="/technology"><Newscomponent key="technology"  pageSize={6} country={"in"} category={"technology"} /></Route>
           </Switch>
         </Router>
       </>
