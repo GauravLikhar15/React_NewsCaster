@@ -7,6 +7,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import LoadingBar from 'react-top-loading-bar'
 
 // async function postData(url = '', data = {}) {
 //   // Default options are marked with *
@@ -28,6 +29,7 @@ export default class App extends Component {
     return (
       <>
         <Router>
+          
 
           <Navbar />
           <Switch>
