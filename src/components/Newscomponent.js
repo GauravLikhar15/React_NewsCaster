@@ -47,11 +47,11 @@ export default class newscomponent extends Component {
 
     static defaultProps = {
         country: 'in'
-      }
+    }
 
-    static propTypes={
-        country:PropTypes.string,
-        pageSize:PropTypes.number,
+    static propTypes = {
+        country: PropTypes.string,
+        pageSize: PropTypes.number,
     }
 
     constructor() {
@@ -62,8 +62,8 @@ export default class newscomponent extends Component {
             articles: this.articles,
             loading: false,
             page: 1,
-            publishedAt:this.publishedAt,
-            author:this.author,
+            publishedAt: this.publishedAt,
+            author: this.author,
 
         }
     }
@@ -123,15 +123,15 @@ export default class newscomponent extends Component {
                     { }
                     <div className="row">
                         {
-            (!this.state.loading) ? this.state.articles.map((element) => {
+                            (!this.state.loading) ? this.state.articles.map((element) => {
 
-if (element.url !== null && element.title !== null && element.description !== null && element.url !== null && element.urlToImage !== null) {
-    return <div className="col-md-4" key={element.url}>
-        <Newsitem title={element.title.slice(0, 44)} discription={element.description.slice(0, 88)} imgURL={element.urlToImage} newsURL={element.url} author={(element.author)?(element.author):"Unknown"} date={element.publishedAt.slice(0,10)}  source={element.source.name}/>
-    </div>
+                                if (element.url !== null && element.title !== null && element.description !== null && element.url !== null && element.urlToImage !== null) {
+                                    return <div className="col-md-4" key={element.url}>
+                                        <Newsitem title={element.title.slice(0, 44)} discription={element.description.slice(0, 88)} imgURL={element.urlToImage} newsURL={element.url} author={(element.author) ? (element.author) : "Unknown"} date={element.publishedAt.slice(0, 10)} source={element.source.name} />
+                                    </div>
 
-}
-            })
+                                }
+                            })
                                 : <></>
                         }
                     </div>
