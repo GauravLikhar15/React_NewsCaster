@@ -10,6 +10,9 @@ import {
 } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
+
+
+
 // async function postData(url = '', data = {}) {
 //   // Default options are marked with *
 //   const response = await fetch(url, {v 
@@ -25,7 +28,7 @@ import LoadingBar from 'react-top-loading-bar'
 // })
 
 export default class App extends Component {
-
+  
   state={
     progress:0}
 

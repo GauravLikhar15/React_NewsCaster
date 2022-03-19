@@ -49,8 +49,9 @@ export default class newscomponent extends Component {
         // }
     ]
 
-    api="acf67f06768643b89992a6dd1ed73ba9"
-
+    api=process.env.REACT_APP_NEWSCASTER_API2;
+    
+  
     static defaultProps = {
         country: 'in'
     }
@@ -98,7 +99,6 @@ export default class newscomponent extends Component {
         this.updateNews();
         
     }
-    
     fetchMoreData = async() => {
         this.setState({page:this.state.page+1});
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&page=${this.state.page + 1}&category=${this.props.category}&apiKey=${this.api}&pageSize=${this.props.pageSize}`;
