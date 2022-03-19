@@ -1,7 +1,12 @@
 import './App.css';
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 import Navbar from './components/Navbar';
 import Newscomponent from './components/Newscomponent';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 // async function postData(url = '', data = {}) {
 //   // Default options are marked with *
@@ -19,12 +24,23 @@ import Newscomponent from './components/Newscomponent';
 
 export default class App extends Component {
 
-  render() 
-  {
+  render() {
     return (
       <>
-    <Navbar/>
-    <Newscomponent pageSize={6} country={"us"} category={"sports"}  />
+        <Router>
+
+          <Navbar />
+          <Switch>
+            <Route exact path="/"><Newscomponent key="general" pageSize={6} country={"us"} category={"general"} /></Route>
+            <Route exact path="/business"><Newscomponent key="business" pageSize={6} country={"us"} category={"business"} /></Route>
+            <Route exact path="/entertainment"><Newscomponent key="entertainment"  pageSize={6} country={"us"} category={"entertainment"} /></Route>
+            <Route exact path="/general"><Newscomponent  key="general" pageSize={6} country={"us"} category={"general"} /></Route>
+            <Route exact path="/health"><Newscomponent  key="health" pageSize={6} country={"us"} category={"health"} /></Route>
+            <Route exact path="/science"><Newscomponent key="science"  pageSize={6} country={"us"} category={"science"} /></Route>
+            <Route exact path="/sports"><Newscomponent key="sports"  pageSize={6} country={"us"} category={"sports"} /></Route>
+            <Route exact path="/technology"><Newscomponent key="technology"  pageSize={6} country={"us"} category={"technology"} /></Route>
+          </Switch>
+        </Router>
       </>
     )
   }
