@@ -1,12 +1,11 @@
 import './App.css';
-
 import React,{Component} from 'react'
 import Navbar from './components/Navbar';
 import Newscomponent from './components/Newscomponent';
 
 // async function postData(url = '', data = {}) {
 //   // Default options are marked with *
-//   const response = await fetch(url, {
+//   const response = await fetch(url, {v 
 //     method: 'GET',
 //     headers: {'Content-Type': 'application/json'},
 //     body: JSON.stringify(data) // body data type must match "Content-Type" header
@@ -19,12 +18,13 @@ import Newscomponent from './components/Newscomponent';
 // })
 
 export default class App extends Component {
-  render() {
+
+  render() 
+  {
     return (
       <>
     <Navbar/>
-    <Newscomponent pageSize={5}/>
-
+    <Newscomponent pageSize={6} country={"us"} category={"sports"}  />
       </>
     )
   }
